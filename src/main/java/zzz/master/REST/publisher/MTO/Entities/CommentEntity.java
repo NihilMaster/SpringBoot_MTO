@@ -1,4 +1,4 @@
-package zzz.master.REST.biblioteca.Entities;
+package zzz.master.REST.publisher.MTO.Entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;

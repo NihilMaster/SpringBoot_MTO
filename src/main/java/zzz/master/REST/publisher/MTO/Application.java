@@ -1,4 +1,4 @@
-package zzz.master.REST.biblioteca;
+package zzz.master.REST.publisher.MTO;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

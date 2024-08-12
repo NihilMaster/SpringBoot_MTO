@@ -1,9 +1,9 @@
-package zzz.master.REST.biblioteca.Repositories;
+package zzz.master.REST.publisher.MTO.Repositories;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import zzz.master.REST.biblioteca.Entities.CommentEntity;
+import zzz.master.REST.publisher.MTO.Entities.CommentEntity;
 
 import java.util.Optional;
 

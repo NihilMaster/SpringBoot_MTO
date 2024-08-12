@@ -1,4 +1,4 @@
-package zzz.master.REST.biblioteca.Exceptions;
+package zzz.master.REST.publisher.MTO.Exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

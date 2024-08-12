@@ -1,4 +1,4 @@
-package zzz.master.REST.biblioteca.Entities;
+package zzz.master.REST.publisher.MTO.Entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -20,8 +20,13 @@ public class PublicationEntity extends AuditModel{
     private String title;
 
     @NotNull
+    @Size(max = 250)
     @Lob
     private String description;
+
+    @NotNull
+    @Lob
+    private String content;
 
     public Long getId() {
         return id;
@@ -45,5 +50,13 @@ public class PublicationEntity extends AuditModel{
 
     public void setDescription(@NotNull String description) {
         this.description = description;
+    }
+
+    public @NotNull String getContent() {
+        return content;
+    }
+
+    public void setContent(@NotNull String content) {
+        this.content = content;
     }
 }
