@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "ab856d48-c1a5-473f-b15e-101864174659",
+		"name": "SpringBoot",
+		"description": "Peticiones para el repositorio:\n\n[https://github.com/NihilMaster/SpringBoot_Basics](https://github.com/NihilMaster/SpringBoot_Basics)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22734484"
+	},
+	"item": [
+		{
+			"name": "Publisher",
+			"item": [
+				{
+					"name": "Comments",
+					"item": [
+						{
+							"name": "GetComments",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/comments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCommentById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/comments/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"comments",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCommentsByPublication",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/comments/publication/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"comments",
+										"publication",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateComment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"txt\": \"Muy buen video, me ayudó mucho :D\",\r\n  \"publication\": {\r\n    \"id\": 1\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/comments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PutComment",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"txt\": \"¡Muy buen video, me ayudó mucho! :DD\",\r\n    \"publication\":{\r\n        \"id\":2\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/comments/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"comments",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteComment",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/comments/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"comments",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Publications",
+					"item": [
+						{
+							"name": "GetPublications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/publications",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"publications"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0",
+											"description": "En la página 0",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "2",
+											"description": "Las dos primeras",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "dateCreation,desc",
+											"description": "Por orden de creación, las dos primeras",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePublication",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Curso práctico de APIs REST relacionales en SpringBoot\",\r\n    \"description\": \"En este curso aprenderás a crear entidades con anotaciones @OneToMany, @ManyToMany, @ManyToOne y @OneToOne\",\r\n    \"content\": \"Aprenderás a usar anotaciones relacionales, desarrollar APIs REST con relaciones y probarlas en Postman o Swagger\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/publications",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"publications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PutPublication",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Curso práctico de APIs REST relacionales en SpringBoot 0\",\r\n    \"description\": \"En este curso aprenderás a crear entidades con anotaciones @OneToMany, @ManyToMany, @ManyToOne y @OneToOne\",\r\n    \"content\": \"Aprenderás a usar anotaciones relacionales, desarrollar APIs REST con relaciones y probarlas en Postman o Swagger\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/publications/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"publications",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeletePublication",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/publications/12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"publications",
+										"12"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "Tercer ejercicio del video:\n\n[https://youtu.be/mgXmTZZCsbI](https://youtu.be/mgXmTZZCsbI)\n\nRepositorio:  \n[https://github.com/NihilMaster/SpringBoot_MTO.git](https://github.com/NihilMaster/SpringBoot_MTO.git)"
+		}
+	]
+}
