@@ -7,6 +7,7 @@ import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Table(name = "comments")
+//@JsonIgnoreProperties({"publication"})
 public class CommentEntity extends AuditModel {
 
     private static final long serialVersionUID = 1L;
@@ -19,7 +20,7 @@ public class CommentEntity extends AuditModel {
     @Lob
     private String txt;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "publication_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private PublicationEntity publication;

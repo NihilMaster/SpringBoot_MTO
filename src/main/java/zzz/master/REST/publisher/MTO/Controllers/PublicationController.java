@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import zzz.master.REST.publisher.MTO.Entities.PublicationEntity;
 import zzz.master.REST.publisher.MTO.Repositories.PublicationRepository;
 
+import java.util.Date;
+
 @RestController
 public class PublicationController {
 
@@ -29,9 +31,10 @@ public class PublicationController {
     public PublicationEntity updatePublication(@PathVariable Long id, @Valid @RequestBody PublicationEntity publication) {
         publication.setId(id);
         return publicationRepository.findById(id).map(publicationMap -> {
-            publicationMap.setTitle(publication.getTitle().isBlank() ? publication.getTitle() : publicationRepository.findById(id).get().getTitle());
-            publicationMap.setDescription(publication.getDescription().isBlank() ? publication.getDescription() : publicationRepository.findById(id).get().getDescription());
-            publicationMap.setContent(publication.getContent().isBlank() ? publication.getContent() : publicationRepository.findById(id).get().getContent());
+            publicationMap.setTitle(!publication.getTitle().isBlank() ? publication.getTitle() : publicationRepository.findById(id).get().getTitle());
+            publicationMap.setDescription(!publication.getDescription().isBlank() ? publication.getDescription() : publicationRepository.findById(id).get().getDescription());
+            publicationMap.setContent(!publication.getContent().isBlank() ? publication.getContent() : publicationRepository.findById(id).get().getContent());
+            publicationMap.setDateModification(new Date()); // Actualizar fecha actual
             return publicationRepository.save(publicationMap);
         }).orElseThrow(() -> new IllegalArgumentException("Publication not found with id = " + id));
     }
